@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <title>Formulário TecMix - Web-to-Lead</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="Logo_com_nome.png" alt="Logo TecMix">
+    <h1>Cadastre-se agora</h1>
+
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Daj00000DlRtJ" method="POST">
+        <input type="hidden" name="oid" value="00Daj00000DlRtJ">
+        <input type="hidden" name="retURL" value="http://">
+
+        <label for="first_name">Primeiro Nome</label>
+        <input id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+
+        <label for="last_name">Sobrenome</label>
+        <input id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+
+        <label for="email">Email</label>
+        <input id="email" maxlength="80" name="email" size="20" type="text" />
+
+        <label for="00Naj000005Ykwn">Tipo de Lead</label>
+        <select id="00Naj000005Ykwn" name="00Naj000005Ykwn" title="Tipo de Lead">
+            <option value="">-- Nenhum --</option>
+            <option value="Pessoa Física">Pessoa Física</option>
+            <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+        </select>
+
+        <label for="company">Empresa</label>
+        <input id="company" maxlength="40" name="company" size="20" type="text" />
+
+        <label for="city">Cidade</label>
+        <input id="city" maxlength="40" name="city" size="20" type="text" />
+
+        <label for="state">Estado/província</label>
+        <input id="state" maxlength="20" name="state" size="20" type="text" />
+
+        <label for="phone">Telefone</label>
+        <input id="phone" maxlength="40" name="phone" size="20" type="text" />
+
+        <label for="mobile">Celular</label>
+        <input id="mobile" maxlength="40" name="mobile" size="20" type="text" />
+
+        <input type="submit" name="submit" value="Enviar">
+    </form>
+</div>
+
+</body>
+</html>
