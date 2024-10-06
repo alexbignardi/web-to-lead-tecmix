@@ -1,3 +1,4 @@
+/* Configurações gerais */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -12,13 +13,13 @@ body {
     box-shadow: 0px 0px 10px 0px #000;
     max-width: 600px;
     margin: 0 auto;
-    text-align: left; /* Alinhamento à esquerda */
+    text-align: left;
 }
 
 img {
     width: 150px;
     display: block;
-    margin: 0 auto 20px auto; /* Centraliza a imagem e adiciona margem inferior */
+    margin: 0 auto 20px auto; /* Centraliza a imagem */
 }
 
 h1 {
@@ -50,12 +51,19 @@ textarea {
     resize: vertical;
 }
 
+p {
+    font-size: 16px;
+    margin-top: 20px; /* Espaçamento no topo dos parágrafos */
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Estilização para os botões */
 button {
     background-color: #1a1aff;
     color: white;
     border: none;
     padding: 12px 20px;
-    margin-right: 10px;
     margin-top: 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -66,13 +74,26 @@ button:hover {
     background-color: #000099;
 }
 
-button:last-of-type {
-    margin-right: 0;
+/* Centralizar botões na página index */
+.container-index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ocupa a altura total da viewport */
 }
 
-p {
-    font-size: 16px;
-    margin-top: 20px; /* Espaçamento no topo dos parágrafos */
-    line-height: 1.6;
-    text-align: center;
+/* Alinhamento dos botões nas páginas de cadastro e casos */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button-group .right-buttons {
+    margin-left: auto;
+}
+
+button:last-of-type {
+    margin-right: 0;
 }
