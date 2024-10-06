@@ -1,5 +1,5 @@
 // Define o tempo inicial (em segundos)
-let countdown = 10;
+/*let countdown = 10;
 
 // Função que atualiza o contador a cada segundo
 function startCountdown() {
@@ -19,3 +19,9 @@ function startCountdown() {
 
 // Inicia o contador assim que a página é carregada
 window.onload = startCountdown;
+*/
+
+// Redireciona para a página inicial após 10 segundos
+setTimeout(function(){
+    window.location.href = 'index.html';
+}, 10000);
