@@ -1,11 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Lead</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <div class="container">
         <img src="Logo_com_nome.png" alt="Logo TecMix">
         <h1>Cadastre-se</h1>
         <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Daj00000DlRtJ" method="POST">
-            <!-- Campos do formulário -->
             <input type="hidden" name="oid" value="00Daj00000DlRtJ">
-            <input type="hidden" name="retURL" value="agradecimento.html">
+            <input type="hidden" name="retURL" value="https://alexbignardi.github.io/web-to-lead-tecmix/agradecimento.html">
             <label for="first_name">Nome:</label>
             <input type="text" id="first_name" name="first_name" maxlength="40"><br>
             <label for="last_name">Sobrenome:</label>
@@ -24,14 +31,10 @@
             <input type="text" id="state" name="state" maxlength="20"><br>
             <label for="country">País:</label>
             <input type="text" id="country" name="country" maxlength="40"><br>
-
-            <div class="button-group">
-                <button type="submit">Enviar</button>
-                <div class="right-buttons">
-                    <button onclick="window.location.href='index.html'" type="button">Voltar</button>
-                    <button onclick="window.location.href='caso.html'" type="button">Abrir um Caso</button>
-                </div>
-            </div>
+            <button type="submit">Enviar</button>
         </form>
+        <button onclick="window.location.href='index.html'">Voltar</button>
+        <button onclick="window.location.href='caso.html'">Abrir um Caso</button>
     </div>
 </body>
+</html>
