@@ -1,32 +1,78 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    text-align: center;
     padding: 50px;
+    margin: 0;
 }
 
 .container {
     background-color: #fff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px #000;
-    display: inline-block;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left; /* Alinhamento à esquerda */
 }
 
 img {
     width: 150px;
+    display: block;
+    margin: 0 auto 20px auto; /* Centraliza a imagem e adiciona margem inferior */
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px; /* Espaçamento entre o título e o conteúdo */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px; /* Espaçamento entre o label e o campo de entrada */
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px; /* Espaçamento entre os campos de entrada */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
 }
 
 button {
     background-color: #1a1aff;
     color: white;
     border: none;
-    padding: 10px 20px;
-    margin: 10px;
+    padding: 12px 20px;
+    margin-right: 10px;
+    margin-top: 10px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover {
     background-color: #000099;
+}
+
+button:last-of-type {
+    margin-right: 0;
+}
+
+p {
+    font-size: 16px;
+    margin-top: 20px; /* Espaçamento no topo dos parágrafos */
+    line-height: 1.6;
+    text-align: center;
 }
