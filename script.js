@@ -27,44 +27,45 @@ window.onload = startCountdown;
 }, 10000);
 */
 // Carrega o script de serviço do Salesforce
-var initESW = function(gslbBaseURL) {
-    embedded_svc.settings.displayHelpButton = true; // Ou false
-    embedded_svc.settings.language = ''; // Por exemplo, 'en' ou 'en-US'
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+    var initESW = function(gslbBaseURL) {
+        embedded_svc.settings.displayHelpButton = true; // Mostrar o botão de ajuda
+        embedded_svc.settings.language = 'pt-BR'; // Define o idioma para português do Brasil
 
-    // Configurações de chat
-    //embedded_svc.settings.defaultMinimizedText = '...'; // Texto padrão minimizado
-    //embedded_svc.settings.disabledMinimizedText = '...'; // Texto de agente offline
-    //embedded_svc.settings.loadingText = ''; // Texto de carregamento
-    //embedded_svc.settings.storageDomain = 'yourdomain.com'; // Define o domínio de armazenamento
+        // Personalizações de Aparência e Comportamento
+        embedded_svc.settings.defaultMinimizedText = 'Precisa de ajuda?'; // Texto quando o chat está minimizado
+        embedded_svc.settings.disabledMinimizedText = 'Estamos Offline'; // Texto quando offline
+        embedded_svc.settings.loadingText = 'Conectando ao agente...'; // Texto de carregamento
 
-    embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-    embedded_svc.settings.entryFeature = 'LiveAgent';
+        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+        embedded_svc.settings.entryFeature = 'LiveAgent';
 
-    embedded_svc.init(
-        'https://mindful-goat-fliaa4-dev-ed.trailblaze.my.salesforce.com', // URL da organização Salesforce
-        'https://mindful-goat-fliaa4-dev-ed.trailblaze.my.salesforce-sites.com/liveAgentSetupFlow', // URL do setup do LiveAgent
-        gslbBaseURL,
-        '00Daj00000DlRtJ', // ID da organização
-        'Agente_de_Chat', // Nome do LiveAgent
-        {
-            baseLiveAgentContentURL: 'https://c.la11-core1.sfdc-8tgtt5.salesforceliveagent.com/content',
-            deploymentId: '572aj000008ZtBV', // ID do deployment
-            buttonId: '573aj000002LM1B', // ID do botão do chat
-            baseLiveAgentURL: 'https://d.la11-core1.sfdc-8tgtt5.salesforceliveagent.com/chat',
-            eswLiveAgentDevName: 'Agente_de_Chat',
-            isOfflineSupportEnabled: true
-        }
-    );
-};
-
-// Verifica se o script do Salesforce já está carregado, caso contrário, o carrega
-if (!window.embedded_svc) {
-    var s = document.createElement('script');
-    s.setAttribute('src', 'https://mindful-goat-fliaa4-dev-ed.trailblaze.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-    s.onload = function() {
-        initESW(null);
+        embedded_svc.init(
+            'https://mindful-goat-fliaa4-dev-ed.trailblaze.my.salesforce.com',  // URL da sua organização Salesforce
+            'https://mindful-goat-fliaa4-dev-ed.trailblaze.my.salesforce-sites.com/liveAgentSetupFlow', // URL do Live Agent
+            gslbBaseURL,
+            '00Daj00000DlRtJ',  // ID da sua organização
+            'Agente_de_Chat',  // Nome da implantação do Live Agent
+            {
+                baseLiveAgentContentURL: 'https://c.la11-core1.sfdc-8tgtt5.salesforceliveagent.com/content', // URL do conteúdo do Live Agent
+                deploymentId: '572aj000008ZtBV', // ID de implantação
+                buttonId: '573aj000002LM1B',  // ID do botão de chat
+                baseLiveAgentURL: 'https://d.la11-core1.sfdc-8tgtt5.salesforceliveagent.com/chat',  // URL do Live Agent
+                eswLiveAgentDevName: 'Agente_de_Chat',  // Nome do Live Agent
+                isOfflineSupportEnabled: true // Suporte offline habilitado
+            }
+        );
     };
-    document.body.appendChild(s);
-} else {
-    initESW('https://service.force.com');
-}
+
+    if (!window.embedded_svc) {
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://mindful-goat-fliaa4-dev-ed.trailblaze.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+        s.onload = function() {
+            initESW(null);
+        };
+        document.body.appendChild(s);
+    } else {
+        initESW('https://service.force.com');
+    }
+</script>
