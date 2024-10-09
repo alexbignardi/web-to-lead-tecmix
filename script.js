@@ -27,8 +27,6 @@ window.onload = startCountdown;
 }, 10000);
 */
 // Carrega o script de serviço do Salesforce
-<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
-<script type='text/javascript'>
     var initESW = function(gslbBaseURL) {
         embedded_svc.settings.displayHelpButton = true; // Mostrar o botão de ajuda
         embedded_svc.settings.language = 'pt-BR'; // Define o idioma para português do Brasil
@@ -68,4 +66,3 @@ window.onload = startCountdown;
     } else {
         initESW('https://service.force.com');
     }
-</script>
