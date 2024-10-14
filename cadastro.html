@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Lead</title>
     <link rel="stylesheet" href="style.css">
-	 <script src="script.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -14,28 +14,61 @@
         <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Daj00000DlRtJ" method="POST">
             <input type="hidden" name="oid" value="00Daj00000DlRtJ">
             <input type="hidden" name="retURL" value="https://alexbignardi.github.io/web-to-lead-tecmix/agradecimento.html">
+            
             <label for="first_name">Nome:</label>
             <input type="text" id="first_name" name="first_name" maxlength="40"><br>
+
             <label for="last_name">Sobrenome:</label>
             <input type="text" id="last_name" name="last_name" maxlength="80"><br>
+
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" maxlength="80"><br>
-			<label for="phone">Telefone</label>
-			<input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
-			<label for="mobile">Celular</label>
-			<input  id="mobile" maxlength="40" name="mobile" size="20" type="text" /><br>
+
+            <label for="phone">Telefone:</label>
+            <input id="phone" maxlength="40" name="phone" size="20" type="text"><br>
+
+            <label for="mobile">Celular:</label>
+            <input id="mobile" maxlength="40" name="mobile" size="20" type="text"><br>
+
             <label for="company">Empresa:</label>
             <input type="text" id="company" name="company" maxlength="40"><br>
+
             <label for="street">Endereço:</label>
             <textarea id="street" name="street"></textarea><br>
+
             <label for="city">Cidade:</label>
             <input type="text" id="city" name="city" maxlength="40"><br>
+
             <label for="zip">CEP:</label>
             <input type="text" id="zip" name="zip" maxlength="20"><br>
+
             <label for="state">Estado:</label>
             <input type="text" id="state" name="state" maxlength="20"><br>
+
             <label for="country">País:</label>
             <input type="text" id="country" name="country" maxlength="40"><br>
+
+            <!-- Campo novo: Tipo de Lead -->
+            <label for="lead_type">Tipo de Lead:</label>
+            <select id="00Naj000005Ykwn" name="00Naj000005Ykwn" title="Tipo de Lead">
+                <option value="">-- Nenhum --</option>
+                <option value="Pessoa Física">Pessoa Física</option>
+                <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+            </select><br>
+
+            <!-- Campo novo: Produtos de Interesse -->
+            <label for="product_interest">Produtos de Interesse:</label>
+            <select id="00Naj000005T2Gj" name="00Naj000005T2Gj" title="Produtos de Interesse">
+                <option value="">-- Nenhum --</option>
+                <option value="Computador">Computador</option>
+                <option value="Notebook">Notebook</option>
+                <option value="Smartphone">Smartphone</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Periférico">Periférico</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Software">Software</option>
+            </select><br>
+
             <button type="submit">Enviar</button>
         </form>
         <button onclick="window.location.href='index.html'">Voltar</button>
