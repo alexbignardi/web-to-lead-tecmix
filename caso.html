@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abrir um Caso</title>
     <link rel="stylesheet" href="style.css">
-     <script src="script.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -14,31 +14,62 @@
         <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00Daj00000DlRtJ" method="POST">
             <input type="hidden" name="orgid" value="00Daj00000DlRtJ">
             <input type="hidden" name="retURL" value="https://alexbignardi.github.io/web-to-lead-tecmix/agradecimento.html">
-            <label for="name">Nome do Contato:</label>
-            <input type="text" id="name" name="name" maxlength="80"><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" maxlength="80"><br>
-            <label for="phone">Telefone:</label>
-            <input type="text" id="phone" name="phone" maxlength="40"><br>
-            <label for="product">Produto:</label>
+
+            <!-- Campo Nome do Contato -->
+            <label for="name">Nome do Contato</label>
+            <input type="text" id="name" name="name" maxlength="80" required><br>
+
+            <!-- Campo Email -->
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" maxlength="80" required><br>
+
+            <!-- Campo Telefone -->
+            <label for="phone">Telefone</label>
+            <input type="text" id="phone" name="phone" maxlength="40" required><br>
+
+            <!-- Campo Empresa -->
+            <label for="company">Empresa</label>
+            <input type="text" id="company" name="company" maxlength="80"><br>
+
+            <!-- Campo Tipo -->
+            <label for="type">Categoria de Chamado</label>
+            <select id="type" name="type">
+                <option value="">--Nenhum--</option>                
+                <option value="Produto">Produto</option>
+                <option value="Envio">Envio</option>
+                <option value="Garantia">Garantia</option>
+                <option value="Problema">Problema</option>
+                <option value="Solicitação de Recurso">Solicitação de Recurso</option>
+                <option value="Pergunta">Pergunta</option>
+                <option value="Outro">Outro</option>
+            </select><br>
+
+            <!-- Campo Produto -->
+            <label for="product">Produto</label>
             <select id="product" name="00Naj000005T2Gc">
                 <option value="">--Nenhum--</option>
-                <option value="GC1040">GC1040</option>
-                <option value="GC1060">GC1060</option>
-                <!-- Adicione os outros produtos aqui -->
+                <option value="Notebook">Notebook</option>
+                <option value="Computador">Computador</option>
+                <option value="Celular">Celular</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Periférico">Periférico</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Software">Software</option>
             </select><br>
-            <label for="reason">Motivo do Caso:</label>
-            <select id="reason" name="reason">
-                <option value="">--Nenhum--</option>
-                <option value="Installation">Instalação</option>
-                <!-- Adicione outros motivos aqui -->
-            </select><br>
-            <label for="subject">Assunto:</label>
-            <input type="text" id="subject" name="subject" maxlength="80"><br>
-            <label for="description">Descrição:</label>
-            <textarea id="description" name="description"></textarea><br>
+
+            <!-- Campo Assunto -->
+            <label for="subject">Assunto</label>
+            <input type="text" id="subject" name="subject" maxlength="80" required><br>
+
+            <!-- Campo Descrição -->
+            <label for="description">Descrição</label>
+            <textarea id="description" name="description" required></textarea><br>
+
+            <!-- Botão Enviar -->
             <button type="submit">Enviar</button>
         </form>
+
+        <!-- Botões adicionais -->
         <button onclick="window.location.href='index.html'">Voltar</button>
         <button onclick="window.location.href='cadastro.html'">Cadastre-se</button>
     </div>
